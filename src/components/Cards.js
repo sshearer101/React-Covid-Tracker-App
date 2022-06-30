@@ -13,22 +13,21 @@ console.log(data)
 
   return (
     <div className="container">
-
       <Grid
         component={Card}
-        className="card-container"
+        className="infected-card-container"
       >
         <CardContent>
-          <Typography color="textSecondary" gutterBottom>
+          <Typography gutterBottom>
             Infected
           </Typography>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5">
           <CountUp start={0} end={data.confirmed.value} duration={2.75} separator="," />
           </Typography>
-          <Typography color="textSecondary">
+          <Typography >
             {new Date(data.lastUpdate).toDateString()}
           </Typography>
-          <Typography variant="body2" component="p">
+          <Typography variant="body2">
             Number of actives cases of COVID-19
           </Typography>
         </CardContent>
@@ -36,22 +35,20 @@ console.log(data)
 
 
       <Grid
-        xs={12}
-        md={3}
         component={Card}
-        className="card-container"
+        className="recovered-card-container"
       >
         <CardContent>
-          <Typography color="textSecondary" gutterBottom>
+          <Typography gutterBottom>
             Recovered
           </Typography>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5">
           <CountUp start={0} end={data.recovered.value} duration={2.75} separator="," />
           </Typography>
-          <Typography color="textSecondary">
+          <Typography >
             {new Date(data.lastUpdate).toDateString()}
           </Typography>
-          <Typography variant="body2" component="p">
+          <Typography variant="body2">
             Number of recoveries from cases of COVID-19
           </Typography>
         </CardContent>
@@ -59,22 +56,20 @@ console.log(data)
 
 
       <Grid
-        xs={12}
-        md={3}
         component={Card}
-        className="card-container"
+        className="death-card-container"
       >
         <CardContent>
-          <Typography color="textSecondary" gutterBottom>
+          <Typography gutterBottom>
             Deaths
           </Typography>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5">
           <CountUp start={0} end={data.deaths.value} duration={2.75} separator="," />
           </Typography>
-          <Typography color="textSecondary">
+          <Typography >
             {new Date(data.lastUpdate).toDateString()}
           </Typography>
-          <Typography variant="body2" component="p">
+          <Typography variant="body2">
             Number of deaths from cases of COVID-19
           </Typography>
         </CardContent>

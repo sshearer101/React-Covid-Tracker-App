@@ -8,6 +8,19 @@
   display: flex;
 }
 
-.card-container{
-  margin-left: 10px
+.infected-card-container{
+  margin-left: 10px;
+  border-bottom: 10px solid rgba(0, 0, 255, 0.5);
+}
+
+.recovered-card-container{
+  margin-left: 10px;
+  border-bottom: 10px solid rgba(0, 255, 0, 0.5);
+
+}
+
+.death-card-container{
+  margin-left: 10px;
+  border-bottom: 10px solid rgba(255, 0, 0, 0.5);
+
 }
