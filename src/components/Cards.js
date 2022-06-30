@@ -1,12 +1,15 @@
 import React from 'react'
 // import {Card, CardContent, Typography, Grid} from "@material-ui/core"
 import { Card, CardContent, Typography, Grid } from '@mui/material'
+import CountUp from 'react-countup';
 
-export default function Cards(data) {
 
-    Object.keys(data).map((x) => 
-        console.log(x)
-    )
+export default function Cards({ data }) {
+if(!data.confirmed){
+    return "Loading..."
+}
+
+console.log(data.lastUpdate)
 
   return (
     <div className="container">
@@ -20,16 +23,16 @@ export default function Cards(data) {
       >
         <CardContent>
           <Typography color="textSecondary" gutterBottom>
-            Title
+            Infected
           </Typography>
           <Typography variant="h5" component="h2">
-              {/* {data.confirmed.value} */}
+          <CountUp start={0} end={data.confirmed.value} duration={2.75} separator="," />
           </Typography>
           <Typography color="textSecondary">
-            {/* {new Date(lastUpdate).toDateString()} */}
+            {new Date(data.lastUpdate).toDateString()}
           </Typography>
           <Typography variant="body2" component="p">
-Card Subtitle
+            Number of actives cases of COVID-19
           </Typography>
         </CardContent>
       </Grid>
