@@ -4,3 +4,10 @@
   display: flex;  
 }
 
+.container {
+  display: flex;
+}
+
+.card-container{
+  margin-left: 10px
+}

@@ -9,17 +9,14 @@ if(!data.confirmed){
     return "Loading..."
 }
 
-console.log(data.lastUpdate)
+console.log(data)
 
   return (
     <div className="container">
 
       <Grid
-        item
-        xs={12}
-        md={3}
         component={Card}
-        
+        className="card-container"
       >
         <CardContent>
           <Typography color="textSecondary" gutterBottom>
@@ -33,6 +30,52 @@ console.log(data.lastUpdate)
           </Typography>
           <Typography variant="body2" component="p">
             Number of actives cases of COVID-19
+          </Typography>
+        </CardContent>
+      </Grid>
+
+
+      <Grid
+        xs={12}
+        md={3}
+        component={Card}
+        className="card-container"
+      >
+        <CardContent>
+          <Typography color="textSecondary" gutterBottom>
+            Recovered
+          </Typography>
+          <Typography variant="h5" component="h2">
+          <CountUp start={0} end={data.recovered.value} duration={2.75} separator="," />
+          </Typography>
+          <Typography color="textSecondary">
+            {new Date(data.lastUpdate).toDateString()}
+          </Typography>
+          <Typography variant="body2" component="p">
+            Number of recoveries from cases of COVID-19
+          </Typography>
+        </CardContent>
+      </Grid>
+
+
+      <Grid
+        xs={12}
+        md={3}
+        component={Card}
+        className="card-container"
+      >
+        <CardContent>
+          <Typography color="textSecondary" gutterBottom>
+            Deaths
+          </Typography>
+          <Typography variant="h5" component="h2">
+          <CountUp start={0} end={data.deaths.value} duration={2.75} separator="," />
+          </Typography>
+          <Typography color="textSecondary">
+            {new Date(data.lastUpdate).toDateString()}
+          </Typography>
+          <Typography variant="body2" component="p">
+            Number of deaths from cases of COVID-19
           </Typography>
         </CardContent>
       </Grid>
