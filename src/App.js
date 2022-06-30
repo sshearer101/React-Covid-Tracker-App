@@ -17,10 +17,9 @@ fetch(url)
   .then((json) => setData(json))
 }, [])
 
-console.log(data)
   return (
     <div className="App">
-      <Cards />
+      <Cards data={data}/>
       <CountryPicker />
       <Chart />
     </div>
