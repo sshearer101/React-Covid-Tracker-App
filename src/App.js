@@ -2,7 +2,7 @@ import './App.css';
 import {useState, useEffect} from "react"
 import Cards from './components/Cards';
 import CountryPicker from './components/CountryPicker';
-import Chart from './components/Chart';
+import ChartComp from './components/ChartComp';
 import axios from 'axios'
 
 
@@ -10,6 +10,7 @@ function App() {
 
 const url = 'https://covid19.mathdro.id/api'
 const [data, setData] = useState([])
+const [dailyData, setDailyData] = useState([])
 
 useEffect(() => { 
 fetch(url)
@@ -17,11 +18,18 @@ fetch(url)
   .then((json) => setData(json))
 }, [])
 
+useEffect(() => { 
+  fetch(`${url}/daily`)
+    .then((res) => res.json())
+    .then((json) => setDailyData(json))
+  }, [])
+
+
   return (
     <div className="App">
       <Cards data={data}/>
       <CountryPicker />
-      <Chart />
+      <ChartComp dailyData={dailyData}/>
     </div>
   );
 }

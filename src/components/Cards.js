@@ -5,11 +5,12 @@ import CountUp from 'react-countup';
 
 
 export default function Cards({ data }) {
+
+    //if data.confirmed does not exist, return loading until exists
 if(!data.confirmed){
     return "Loading..."
 }
 
-console.log(data)
 
   return (
     <div className="container">
