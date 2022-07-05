@@ -2,8 +2,7 @@ import './App.css';
 import {useState, useEffect} from "react"
 import Cards from './components/Cards';
 import CountryPicker from './components/CountryPicker';
-import ChartComp from './components/ChartComp';
-import axios from 'axios'
+import Chart from './components/Chart';
 
 
 function App() {
@@ -29,7 +28,7 @@ useEffect(() => {
     <div className="App">
       <Cards data={data}/>
       <CountryPicker />
-      <ChartComp dailyData={dailyData}/>
+      <Chart dailyData={dailyData}/>
     </div>
   );
 }
